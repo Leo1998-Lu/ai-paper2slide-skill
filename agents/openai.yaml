@@ -1,0 +1,5 @@
+interface:
+  display_name: "AI Paper2Slide"
+  short_description: "Turn LaTeX-sourced AI papers into PPTX decks and default English speaker scripts."
+  icon: "📊"
+  primary_color: "#4F46E5"
