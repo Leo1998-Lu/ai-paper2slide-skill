@@ -6,6 +6,8 @@
 </p>
 
 <p align="center">
+  <a href="#english"><img src="https://img.shields.io/badge/English-Read%20EN-blue?style=for-the-badge" alt="English"></a>
+  <a href="#中文"><img src="https://img.shields.io/badge/中文-阅读%20CN-red?style=for-the-badge" alt="中文"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Output-PPTX%20%2B%20DOCX-green" alt="PPTX and DOCX">
   <img src="https://img.shields.io/badge/Visuals-LaTeX--only-purple" alt="LaTeX-only visuals">
@@ -21,12 +23,12 @@
 
 `ai-paper2slide-skill` is an open-source ChatGPT Skill for converting AI and scientific papers into **conference-quality slide packages**.
 
-It is designed for papers submitted to or presented at top-tier venues such as **NeurIPS, ICML, ICLR, CVPR, ACL, KDD, WWW, AAAI, SIGIR, EMNLP, ECCV, ICCV, MICCAI**, and related AI, machine learning, computer vision, NLP, data mining, and medical AI conferences.
+It is designed for papers submitted to or presented at top-tier venues such as **NeurIPS, ICML, ICLR, CVPR, ACL, KDD, WWW, AAAI, SIGIR, EMNLP, ECCV, ICCV, MICCAI**, and related AI, machine learning, and computer vision conferences.
 
 Unlike generic document-to-slide tools, this Skill focuses on two strict production guarantees:
 
 1. **LaTeX-only slide images**  
-   Any image inserted into the slide deck must come from the user-provided LaTeX source package. The Skill does not use PDF screenshots, web images, generated images, previous-conversation images, or visually similar substitutes.
+   Any image inserted into the slide deck must come from the user-provided LaTeX source package. The Skill does not use PDF screenshots, web images, generated images, previous-conversation images, or external substitutes.
 
 2. **Default two-file delivery**  
    Every full paper-to-slide run returns at least two user-facing files by default: a `.pptx` slide deck and a `.docx` English per-slide speaker script.
@@ -62,7 +64,7 @@ Disallowed slide image sources include:
 - images from other papers or project pages
 - user-uploaded images outside the LaTeX package
 
-If a needed figure cannot be resolved from the LaTeX package, the Skill should not insert a substitute image. Instead, it creates a clean text/shape-based explanatory slide and records the unresolved asset in the quality report.
+If a needed figure cannot be resolved from the LaTeX package, the Skill should not insert a substitute image. Instead, it creates a clean text/shape-based explanatory slide and records the unresolved source in the quality report.
 
 ---
 
@@ -110,7 +112,7 @@ Users may still request different language modes for slide text, notes, or addit
 | `Bilingual` | Commonly used for English slide titles with Chinese explanations, or Chinese slides with English technical terms |
 | `Custom language` | Any user-specified language depending on the venue or audience |
 
-Recommended behavior: keep `paper2slide_speaker_script.docx` as the default English script. If the user requests Chinese or bilingual materials, return additional language-specific files when appropriate, such as `paper2slide_speaker_script_zh.docx`.
+Recommended behavior: keep `paper2slide_speaker_script.docx` as the default English script. If the user requests Chinese or bilingual materials, return additional language-specific files when appropriate.
 
 Example language requests:
 
@@ -138,7 +140,7 @@ For best accuracy, provide both:
 2. **Compiled paper PDF**  
    Used for text cross-checking, section order, and final paper layout reference.
 
-The LaTeX package is required if the deck should contain paper images. PDF-only input may be used for text understanding, but the Skill should not insert PDF-cropped figures or screenshots into the PPTX.
+The LaTeX package is required if the deck should contain paper images. PDF-only input may be used for text understanding, but the Skill should not insert PDF-cropped figures or screenshots into the presentation.
 
 ---
 
@@ -222,6 +224,29 @@ Artifact generation
         ├── paper2slide_speaker_script.docx
         ├── visual_source_manifest.json
         └── paper2slide_quality_report.md
+```
+
+---
+
+## Start History
+
+A minimal visualized project start history can help readers understand the scope and evolution of the skill.
+
+```mermaid
+gantt
+    title Project Start History
+    dateFormat  YYYY-MM-DD
+    axisFormat  %Y-%m
+
+    section Foundations
+    Repository created           :done,    created, 2026-01-01, 30d
+    README and skill positioning  :done,    readme,   2026-01-15, 20d
+    LaTeX-only policy definition  :done,    latex,    2026-02-01, 25d
+
+    section Delivery
+    PPTX + DOCX default workflow   :active,  delivery, 2026-03-01, 35d
+    Visual source manifest         :active,  manifest, 2026-04-01, 30d
+    Quality report workflow        :active,  quality,   2026-05-01, 30d
 ```
 
 ---
@@ -388,9 +413,10 @@ If this Skill helps your research presentation workflow, please consider citing 
 ```bibtex
 @misc{ai-paper2slide-skill,
   title        = {AI Paper2Slide Skill: Conference-Grade Paper-to-Slide Generation for AI Research},
-  author       = {AI Paper2Slide Skill Contributors},
+  author       = {Zhixiang Lu},
   year         = {2026},
-  howpublished = {\url{https://github.com/your-org/ai-paper2slide-skill}}
+  howpublished = {\url{https://github.com/Leo1998-Lu/ai-paper2slide-skill}},
+  note         = {Open-source ChatGPT Skill for LaTeX-only, conference-style paper-to-slide generation.}
 }
 ```
 
@@ -402,7 +428,7 @@ If this Skill helps your research presentation workflow, please consider citing 
 
 `ai-paper2slide-skill` 是一个开源 ChatGPT Skill，用于将 AI 与科学研究论文转换为**会议级别的演示文稿套件**。
 
-该 Skill 面向 **NeurIPS、ICML、ICLR、CVPR、ACL、KDD、WWW、AAAI、SIGIR、EMNLP、ECCV、ICCV、MICCAI** 等人工智能、机器学习、计算机视觉、自然语言处理、数据挖掘和医学 AI 顶级会议场景。
+该 Skill 面向 **NeurIPS、ICML、ICLR、CVPR、ACL、KDD、WWW、AAAI、SIGIR、EMNLP、ECCV、ICCV、MICCAI** 等人工智能、机器学习、计算机视觉、自然语言处理、数据挖掘等顶级会议。
 
 与普通“文档转 PPT”工具不同，本 Skill 强调两个强约束：
 
@@ -541,6 +567,29 @@ Slide 中的所有图片必须只来自我上传的 LaTeX 源文件包。
 
 ---
 
+## 项目起始历史
+
+下面的可视化时间线可以帮助读者快速了解项目的启动与演进。
+
+```mermaid
+gantt
+    title 项目起始历史
+    dateFormat  YYYY-MM-DD
+    axisFormat  %Y-%m
+
+    section 基础阶段
+    仓库创建                 :done,    created, 2026-01-01, 30d
+    README 和定位完成        :done,    readme,   2026-01-15, 20d
+    LaTeX-only 规范建立      :done,    latex,    2026-02-01, 25d
+
+    section 交付阶段
+    PPTX + DOCX 默认流程      :active,  delivery, 2026-03-01, 35d
+    Visual source manifest   :active,  manifest, 2026-04-01, 30d
+    Quality report 流程       :active,  quality,   2026-05-01, 30d
+```
+
+---
+
 ## 工作流程
 
 ```text
@@ -550,7 +599,7 @@ LaTeX 源文件包 + 可选 PDF
 源码检查
         │
         ├── figure / table 提取
-        ├── caption 和 label 映射
+        ├── caption ��� label 映射
         ├── includegraphics 图片资源解析
         ├── LaTeX-only 图片资格检查
         └── visual_source_manifest.json
