@@ -1,75 +1,143 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-label="AI Paper2Slide Skill Banner">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-label="AI Paper2Slide Skill Banner (Academic Style)">
   <defs>
+    <!-- Academic, restrained palette -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0B1020"/>
-      <stop offset="50%" stop-color="#13294B"/>
-      <stop offset="100%" stop-color="#2B0F54"/>
+      <stop offset="0%" stop-color="#0A0F1C"/>
+      <stop offset="55%" stop-color="#101A2E"/>
+      <stop offset="100%" stop-color="#14243A"/>
     </linearGradient>
+
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="50%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#34D399"/>
+      <stop offset="0%" stop-color="#7FA6FF"/>
+      <stop offset="100%" stop-color="#8ED1C2"/>
     </linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
     </filter>
   </defs>
 
+  <!-- Background -->
   <rect width="1600" height="480" fill="url(#bg)"/>
 
-  <g opacity="0.18">
-    <circle cx="300" cy="130" r="150" fill="#38BDF8"/>
-    <circle cx="1320" cy="90" r="180" fill="#A855F7"/>
-    <circle cx="1260" cy="380" r="220" fill="#22C55E"/>
+  <!-- Subtle ambient field -->
+  <g opacity="0.10" filter="url(#soft)">
+    <circle cx="280" cy="110" r="170" fill="#6AA9FF"/>
+    <circle cx="1320" cy="90" r="200" fill="#7FB3FF"/>
+    <circle cx="1240" cy="390" r="220" fill="#7EC7BA"/>
   </g>
 
-  <g stroke="#8B9BB7" stroke-opacity="0.18" stroke-width="2">
-    <path d="M120 320 H520"/>
-    <path d="M120 360 H450"/>
-    <path d="M1080 115 H1480"/>
-    <path d="M1110 155 H1460"/>
+  <!-- Fine grid lines (paper-like discipline) -->
+  <g stroke="#A5B4CC" stroke-opacity="0.10" stroke-width="1.5">
+    <path d="M92 138 H652"/>
+    <path d="M92 356 H652"/>
+    <path d="M980 138 H1508"/>
+    <path d="M980 356 H1508"/>
   </g>
 
-  <g filter="url(#glow)">
-    <rect x="92" y="82" width="560" height="316" rx="28" fill="#0F172A" fill-opacity="0.92" stroke="url(#accent)" stroke-width="2"/>
-    <rect x="980" y="82" width="528" height="316" rx="28" fill="#0F172A" fill-opacity="0.92" stroke="url(#accent)" stroke-width="2"/>
+  <!-- Framed panels -->
+  <g>
+    <rect x="92" y="82" width="560" height="316" rx="14" fill="#0F1728" fill-opacity="0.86" stroke="#8FA7C7" stroke-opacity="0.45" stroke-width="1.4"/>
+    <rect x="980" y="82" width="528" height="316" rx="14" fill="#0F1728" fill-opacity="0.86" stroke="#8FA7C7" stroke-opacity="0.45" stroke-width="1.4"/>
   </g>
 
-  <g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" fill="#E5E7EB">
-    <text x="144" y="164" font-size="58" font-weight="800">AI Paper2Slide Skill</text>
-    <text x="144" y="220" font-size="28" fill="#CBD5E1">Conference-grade paper-to-slide generation</text>
-    <text x="144" y="265" font-size="22" fill="#94A3B8">LaTeX-only visuals · PPTX + DOCX default delivery</text>
-    <rect x="144" y="296" width="220" height="44" rx="22" fill="url(#accent)"/>
-    <text x="176" y="325" font-size="20" font-weight="700" fill="#08111F">English · 中文</text>
+  <!-- Left panel typography -->
+  <g font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <!-- Kicker -->
+    <text x="144" y="132"
+          font-size="15"
+          font-weight="600"
+          letter-spacing="2.2"
+          fill="#9FB3CC">
+      RESEARCH AUTOMATION SKILL
+    </text>
 
-    <text x="1036" y="156" font-size="28" font-weight="700">Principles</text>
-    <text x="1036" y="206" font-size="20" fill="#CBD5E1">1. Provenance before aesthetics</text>
-    <text x="1036" y="244" font-size="20" fill="#CBD5E1">2. LaTeX package as the only image source</text>
-    <text x="1036" y="282" font-size="20" fill="#CBD5E1">3. PPTX and English DOCX by default</text>
-    <text x="1036" y="320" font-size="20" fill="#CBD5E1">4. Claims before decoration</text>
+    <!-- Main title -->
+    <text x="144" y="190"
+          font-size="56"
+          font-weight="780"
+          letter-spacing="0.15"
+          fill="#E8EEF7">
+      Paper2Slide Skill
+    </text>
+
+    <!-- Subtitle -->
+    <text x="144" y="236"
+          font-size="24"
+          font-weight="500"
+          letter-spacing="0.08"
+          fill="#C8D4E5">
+      Conference-grade paper-to-slide generation
+    </text>
+
+    <!-- Supporting sentence -->
+    <text x="144" y="274"
+          font-size="19"
+          font-weight="450"
+          letter-spacing="0.06"
+          fill="#9FB0C6">
+      LaTeX-only visuals · PPTX + DOCX default delivery
+    </text>
+
+    <!-- Quiet tag button -->
+    <rect x="144" y="300" width="250" height="40" rx="8" fill="#DDE7F5" fill-opacity="0.92"/>
+    <text x="269" y="320"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          font-size="17"
+          font-weight="650"
+          letter-spacing="0.25"
+          fill="#0E1A2B">
+      English · 中文
+    </text>
   </g>
 
-  <g stroke="url(#accent)" stroke-width="4" fill="none" opacity="0.9">
-    <path d="M740 110 C800 95, 860 95, 920 110"/>
-    <path d="M740 370 C800 385, 860 385, 920 370"/>
-    <path d="M780 132 V348"/>
-    <path d="M860 132 V348"/>
+  <!-- Middle connector: minimalist, technical -->
+  <g stroke="#89A4C6" stroke-opacity="0.72" stroke-width="2.2" fill="none">
+    <path d="M724 126 H932"/>
+    <path d="M724 354 H932"/>
+    <path d="M778 126 V354"/>
+    <path d="M878 126 V354"/>
   </g>
 
-  <g fill="#E5E7EB" opacity="0.95">
-    <rect x="750" y="144" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
-    <rect x="840" y="176" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
-    <rect x="750" y="240" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
-    <rect x="840" y="272" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
+  <g fill="#DCE7F8" opacity="0.95" stroke="#8CA7C8" stroke-width="1.2">
+    <rect x="750" y="150" width="56" height="56" rx="8" fill="#111A2B"/>
+    <rect x="840" y="180" width="56" height="56" rx="8" fill="#111A2B"/>
+    <rect x="750" y="240" width="56" height="56" rx="8" fill="#111A2B"/>
+    <rect x="840" y="270" width="56" height="56" rx="8" fill="#111A2B"/>
   </g>
 
-  <g fill="#93C5FD" opacity="0.9">
-    <circle cx="103" cy="104" r="6"/>
-    <circle cx="120" cy="104" r="6"/>
-    <circle cx="137" cy="104" r="6"/>
+  <!-- Right panel typography -->
+  <g font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="1036" y="144"
+          font-size="15"
+          font-weight="600"
+          letter-spacing="2.0"
+          fill="#9FB3CC">
+      DESIGN PRINCIPLES
+    </text>
+
+    <text x="1036" y="186"
+          font-size="30"
+          font-weight="740"
+          letter-spacing="0.12"
+          fill="#E7EDF7">
+      Principles
+    </text>
+
+    <!-- Ordered lines with disciplined leading -->
+    <g fill="#C8D4E5" font-size="20" font-weight="500" letter-spacing="0.08">
+      <text x="1036" y="230">1. Provenance before aesthetics</text>
+      <text x="1036" y="266">2. LaTeX package as the only image source</text>
+      <text x="1036" y="302">3. PPTX and English DOCX by default</text>
+      <text x="1036" y="338">4. Claims before decoration</text>
+    </g>
+  </g>
+
+  <!-- Minimal top-left markers -->
+  <g fill="#A8BCD6" opacity="0.9">
+    <circle cx="108" cy="104" r="4.2"/>
+    <circle cx="122" cy="104" r="4.2"/>
+    <circle cx="136" cy="104" r="4.2"/>
   </g>
 </svg>
