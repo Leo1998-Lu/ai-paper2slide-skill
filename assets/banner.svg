@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-label="AI Paper2Slide Skill Banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="50%" stop-color="#13294B"/>
+      <stop offset="100%" stop-color="#2B0F54"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="480" fill="url(#bg)"/>
+
+  <g opacity="0.18">
+    <circle cx="300" cy="130" r="150" fill="#38BDF8"/>
+    <circle cx="1320" cy="90" r="180" fill="#A855F7"/>
+    <circle cx="1260" cy="380" r="220" fill="#22C55E"/>
+  </g>
+
+  <g stroke="#8B9BB7" stroke-opacity="0.18" stroke-width="2">
+    <path d="M120 320 H520"/>
+    <path d="M120 360 H450"/>
+    <path d="M1080 115 H1480"/>
+    <path d="M1110 155 H1460"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <rect x="92" y="82" width="560" height="316" rx="28" fill="#0F172A" fill-opacity="0.92" stroke="url(#accent)" stroke-width="2"/>
+    <rect x="980" y="82" width="528" height="316" rx="28" fill="#0F172A" fill-opacity="0.92" stroke="url(#accent)" stroke-width="2"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" fill="#E5E7EB">
+    <text x="144" y="164" font-size="58" font-weight="800">AI Paper2Slide Skill</text>
+    <text x="144" y="220" font-size="28" fill="#CBD5E1">Conference-grade paper-to-slide generation</text>
+    <text x="144" y="265" font-size="22" fill="#94A3B8">LaTeX-only visuals · PPTX + DOCX default delivery</text>
+    <rect x="144" y="296" width="220" height="44" rx="22" fill="url(#accent)"/>
+    <text x="176" y="325" font-size="20" font-weight="700" fill="#08111F">English · 中文</text>
+
+    <text x="1036" y="156" font-size="28" font-weight="700">Principles</text>
+    <text x="1036" y="206" font-size="20" fill="#CBD5E1">1. Provenance before aesthetics</text>
+    <text x="1036" y="244" font-size="20" fill="#CBD5E1">2. LaTeX package as the only image source</text>
+    <text x="1036" y="282" font-size="20" fill="#CBD5E1">3. PPTX and English DOCX by default</text>
+    <text x="1036" y="320" font-size="20" fill="#CBD5E1">4. Claims before decoration</text>
+  </g>
+
+  <g stroke="url(#accent)" stroke-width="4" fill="none" opacity="0.9">
+    <path d="M740 110 C800 95, 860 95, 920 110"/>
+    <path d="M740 370 C800 385, 860 385, 920 370"/>
+    <path d="M780 132 V348"/>
+    <path d="M860 132 V348"/>
+  </g>
+
+  <g fill="#E5E7EB" opacity="0.95">
+    <rect x="750" y="144" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
+    <rect x="840" y="176" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
+    <rect x="750" y="240" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
+    <rect x="840" y="272" width="56" height="56" rx="12" fill="#111827" stroke="url(#accent)"/>
+  </g>
+
+  <g fill="#93C5FD" opacity="0.9">
+    <circle cx="103" cy="104" r="6"/>
+    <circle cx="120" cy="104" r="6"/>
+    <circle cx="137" cy="104" r="6"/>
+  </g>
+</svg>
