@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Leo1998-Lu/ai-paper2slide-skill/main/assets/banner.png" width="760" alt="AI Paper2Slide Skill">
+  <img src="assets/banner.svg" width="760" alt="AI Paper2Slide Skill">
 </p>
 
 <h2 align="center"><b>Conference-Grade Paper-to-Slide Generation for AI Research</b></h2>
