@@ -299,10 +299,6 @@ If this Skill helps your research presentation workflow, please consider citing 
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=Leo1998-Lu%2Fai-paper2slide-skill&type=timeline&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=Leo1998-Lu/ai-paper2slide-skill&type=timeline&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=Leo1998-Lu/ai-paper2slide-skill&type=timeline&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=Leo1998-Lu/ai-paper2slide-skill&type=timeline&legend=top-left" />
- </picture>
-</a>
+<p align="center">
+  <img src="./assets/star-history.svg" alt="Star History Chart" width="700">
+</p>
