@@ -1,45 +1,40 @@
 name: Generate Star History
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    # 每天 UTC 时间 00:00 (北京时间早上 8:00) 自动执行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # 允许你在 GitHub Actions 页面手动点击触发
 
 permissions:
-  contents: write
+  contents: write # 必须，用于允许 Bot 提交生成的图片回仓库
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          persist-credentials: true
-
-      - name: Check files
+          python-version: '3.10'
+          
+      - name: Install dependencies
         run: |
-          pwd
-          ls -la
-          ls -la scripts || true
-          test -f scripts/generate_star_history.py
-
-      - name: Generate star history SVG
+          python -m pip install --upgrade pip
+          pip install requests pandas matplotlib
+          
+      - name: Run Python script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: Leo1998-Lu
-          REPO_NAME: ai-paper2slide-skill
-        run: |
-          mkdir -p assets
-          python3 scripts/generate_star_history.py
-          ls -la assets
-
-      - name: Commit updated chart
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/star-history.svg assets/star-history.json
-          git status
-          git diff --cached --quiet || git commit -m "chore: update star history chart"
-          git push
+        run: python generate_star_history.py
+        
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update star history chart"
+          file_pattern: "star_history.png"
