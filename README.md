@@ -299,6 +299,4 @@ If this Skill helps your research presentation workflow, please consider citing 
 
 ## Star History
 
-<p align="center">
-  <img src="./assets/star-history.svg" alt="Star History Chart" width="700">
-</p>
+![Star History](./star_history.png)
