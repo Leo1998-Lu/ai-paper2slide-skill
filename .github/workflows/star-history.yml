@@ -15,6 +15,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Check files
+        run: |
+          pwd
+          ls -la
+          ls -la scripts || true
+          test -f scripts/generate_star_history.py
 
       - name: Generate star history SVG
         env:
@@ -22,12 +31,15 @@ jobs:
           REPO_OWNER: Leo1998-Lu
           REPO_NAME: ai-paper2slide-skill
         run: |
-          python scripts/generate_star_history.py
+          mkdir -p assets
+          python3 scripts/generate_star_history.py
+          ls -la assets
 
       - name: Commit updated chart
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/star-history.svg assets/star-history.json
+          git status
           git diff --cached --quiet || git commit -m "chore: update star history chart"
           git push
